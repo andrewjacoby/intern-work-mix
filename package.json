@@ -1,0 +1,31 @@
+{
+  "name": "intern-eod-trends",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "trigger:dev": "trigger dev",
+    "trigger:deploy": "trigger deploy"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.118.0",
+    "@trigger.dev/sdk": "4.8.3",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "recharts": "3.10.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@trigger.dev/build": "4.8.3",
+    "@types/node": "22.20.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "trigger.dev": "4.8.3",
+    "typescript": "5.9.3"
+  }
+}
