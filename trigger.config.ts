@@ -1,8 +1,8 @@
 import { defineConfig } from "@trigger.dev/sdk";
 
 export default defineConfig({
-  // Your Trigger.dev project ref ("proj_..."), from the project's Settings page.
-  project: process.env.TRIGGER_PROJECT_REF ?? "proj_REPLACE_ME",
+  // Trigger.dev project: Good Shepherd intern work mix
+  project: "proj_nvccfhuargvsmamwgpdl",
   dirs: ["./src/trigger"],
   runtime: "node",
   logLevel: "info",
