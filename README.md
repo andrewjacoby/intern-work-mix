@@ -64,25 +64,20 @@ supabase/migrations/          table definitions (already applied to Datavault)
 | `SLACK_CHANNEL_ID` | Vercel | `C08E42PACSE` |
 | `INGEST_SECRET` | Vercel + n8n | Any long random string |
 | `TRIGGER_SECRET_KEY` | Vercel | Trigger.dev → API Keys → **Production** secret key (`tr_prod_…`) |
-| `TRIGGER_PROJECT_REF` | deploy | Trigger.dev → Project Settings (`proj_…`) |
 | `DASHBOARD_PASSWORD` | Vercel | Any password. Leave it blank to make the dashboard public. |
 
-### 2. Trigger.dev
+### 2. Trigger.dev (project "intern work log", `proj_bfkwygwdmfnvglbcuzho`)
 
-```bash
-npm install
-npx trigger.dev@4.8.3 login
-TRIGGER_PROJECT_REF=proj_xxx npm run trigger:deploy
-```
+This repo is connected under **Project settings → Git**, so every push to `main` deploys automatically. You don't need to deploy from a terminal.
 
-In the Trigger.dev dashboard, go to **Environment Variables → Production** and add:
+Under **Environment Variables → Production**, add:
 
 - `SUPABASE_URL`
 - `SUPABASE_SERVICE_ROLE_KEY`
 - `OPENROUTER_API_KEY`
-- `OPENROUTER_MODEL`
+- `OPENROUTER_MODEL` (optional)
 
-Optional: under **Settings → Git**, connect this repo so every push to `main` deploys automatically.
+To confirm the deploy, open **Tasks → health-check → Test** and run it with `{}`.
 
 ### 3. Vercel
 
@@ -137,7 +132,7 @@ delete from intern_eod_reports where client_name = 'Test Client';
 ```bash
 cp .env.example .env.local
 npm run dev           # dashboard at http://localhost:3000
-npm run trigger:dev   # runs the task locally against your Trigger.dev dev environment
+npx trigger.dev@4.8.3 login && npm run trigger:dev   # optional: run tasks locally (needs a tr_dev_ key in .env.local)
 ```
 
 `GET /api/health` returns `{ "ok": true }`. It skips the dashboard password, so it can be used for uptime checks.
