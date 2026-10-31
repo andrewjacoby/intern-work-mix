@@ -1,8 +1,8 @@
 import { defineConfig } from "@trigger.dev/sdk";
 
 export default defineConfig({
-  // Trigger.dev project: Good Shepherd intern work mix
-  project: "proj_nvccfhuargvsmamwgpdl",
+  // Trigger.dev project: "intern work log"
+  project: "proj_bfkwygwdmfnvglbcuzho",
   dirs: ["./src/trigger"],
   runtime: "node",
   logLevel: "info",
